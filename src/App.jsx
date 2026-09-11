@@ -77,8 +77,10 @@ function App() {
             </button>
 
             {/* --- JAUNĀ POGA: Dzēst --- */}
+
             <button onClick={() => deleteTodo(todo.id)} style={{ color: "orange", marginLeft: "15px" }}>
               NOŅEMT NO SARAKSTA
+
             </button>
 
           </li>
