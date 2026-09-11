@@ -59,7 +59,9 @@ function App() {
       <input
         value={task}
         onChange={(e) => setTask(e.target.value)}
-        placeholder="Ko tu paveiksi šodien?"
+
+        placeholder="Jauns uzdevums..."
+
       />
       {editId ? (
         <button onClick={updateTodo}>Saglabāt izmaiņas</button>
