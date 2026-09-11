@@ -77,11 +77,8 @@ function App() {
             </button>
 
             {/* --- JAUNĀ POGA: Dzēst --- */}
-            <button
-              onClick={() => deleteTodo(todo.id)}
-              style={{ color: "red", marginLeft: "10px" }}
-            >
-              Dzēst
+            <button onClick={() => deleteTodo(todo.id)} style={{ color: "red", marginLeft: "10px" }}>
+              IZDZĒST UZREIZ
             </button>
           </li>
         ))}
