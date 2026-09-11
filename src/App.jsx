@@ -53,7 +53,7 @@ function App() {
 
   return (
     <div>
-      <h1>Mans To-Do Saraksts</h1>
+      <h1>🚀 Mans Produktīvais To-Do</h1>
       <input
         value={task}
         onChange={(e) => setTask(e.target.value)}
