@@ -1,8 +1,7 @@
-import { useState, useEffect } from 'react' // 1. Pievienojam useEffect
+import { useState, useEffect } from 'react'
 import './App.css'
 
 function App() {
-  // Salabots: ja localStorage ir tukšs, atgriežam tukšu masīvu []
   const [todos, setTodos] = useState(() => {
     const savedTodos = localStorage.getItem("todos");
     return savedTodos ? JSON.parse(savedTodos) : [];
@@ -11,7 +10,6 @@ function App() {
   const [task, setTask] = useState("");
   const [editId, setEditId] = useState(null);
 
-  // 2. Automātiski saglabājam todos iekš localStorage, kad saraksts mainās
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos]);
@@ -40,14 +38,11 @@ function App() {
     setEditId(null);
   }
 
-  // --- JAUNĀ FUNKCIONALITĀTE: Dzēšanas funkcija ---
   function deleteTodo(idToDelete) {
-    // Ja pašlaik tiek rediģēts tieši tas elements, kuru dzēšam, atceļam rediģēšanu
     if (editId === idToDelete) {
       setEditId(null);
       setTask("");
     }
-    // Saglabājam visus elementus, izņemot to, kuram sakrīt ID
     setTodos(todos.filter((todo) => todo.id !== idToDelete));
   }
 
@@ -79,9 +74,6 @@ function App() {
             }}>
               Rediģēt
             </button>
-
-            {/* --- JAUNĀ POGA: Dzēst --- */}
-
             <button onClick={() => deleteTodo(todo.id)} style={{ color: "orange", marginLeft: "15px" }}>
               NOŅEMT NO SARAKSTA
 
